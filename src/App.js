@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Onboarding from './pages/Onboarding';
+import Home from './pages/Home';
+import Diet from './pages/Diet';
+import Tablets from './pages/Tablets';
+import Activities from './pages/Activities';
+import AIChat from './pages/AIChat';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Onboarding />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/diet" element={<Diet />} />
+        <Route path="/tablets" element={<Tablets />} />
+        <Route path="/activities" element={<Activities />} />
+        <Route path="/chat" element={<AIChat />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
